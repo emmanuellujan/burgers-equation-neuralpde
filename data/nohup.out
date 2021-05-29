@@ -1,9 +1,7 @@
-Precompilation ends
-Solving grid_strategy
 Precompilation starts
 Precompilation ends
 Solving grid_strategy
-Training time = 2198.225625012
+Training time = 2526.245389998
 qt.qpa.xcb: could not connect to display 
 qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
 This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
@@ -16,7 +14,7 @@ GKS: can't connect to GKS socket application
 
 GKS: Open failed in routine OPEN_WS
 GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
-Maximum error of 6000, chain_1, grid_strategy:0.2341175463089522
+Maximum error of 6000, chain_1, grid_strategy:0.2131681697818859
 qt.qpa.xcb: could not connect to display 
 qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
 This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
@@ -30,7 +28,7 @@ GKS: can't connect to GKS socket application
 GKS: Open failed in routine OPEN_WS
 GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
 Solving stochastic_strategy
-Training time = 1498.946030305
+Training time = 1803.911846045
 qt.qpa.xcb: could not connect to display 
 qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
 This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
@@ -43,7 +41,7 @@ GKS: can't connect to GKS socket application
 
 GKS: Open failed in routine OPEN_WS
 GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
-Maximum error of 6000, chain_1, stochastic_strategy:0.8029763394950065
+Maximum error of 6000, chain_1, stochastic_strategy:0.5127589629821836
 qt.qpa.xcb: could not connect to display 
 qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
 This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
@@ -57,7 +55,7 @@ GKS: can't connect to GKS socket application
 GKS: Open failed in routine OPEN_WS
 GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
 Solving quasirandom_strategy
-Training time = 1388.844518724
+Training time = 1569.4460943
 qt.qpa.xcb: could not connect to display 
 qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
 This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
@@ -70,7 +68,7 @@ GKS: can't connect to GKS socket application
 
 GKS: Open failed in routine OPEN_WS
 GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
-Maximum error of 6000, chain_1, quasirandom_strategy:0.8177830192546218
+Maximum error of 6000, chain_1, quasirandom_strategy:0.9326724434741207
 qt.qpa.xcb: could not connect to display 
 qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
 This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
@@ -84,7 +82,7 @@ GKS: can't connect to GKS socket application
 GKS: Open failed in routine OPEN_WS
 GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
 Solving quadrature_strategy with CubatureJLh
-Training time = 164.494565695
+Training time = 179.816137529
 qt.qpa.xcb: could not connect to display 
 qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
 This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
@@ -97,7 +95,7 @@ GKS: can't connect to GKS socket application
 
 GKS: Open failed in routine OPEN_WS
 GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
-Maximum error of 6000, chain_1, CubatureJLh:2.388962346255629
+Maximum error of 6000, chain_1, CubatureJLh:2.049453936822805
 qt.qpa.xcb: could not connect to display 
 qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
 This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
@@ -111,7 +109,7 @@ GKS: can't connect to GKS socket application
 GKS: Open failed in routine OPEN_WS
 GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
 Solving quadrature_strategy with CubatureJLp
-Training time = 50.263055728
+Training time = 56.196039145
 qt.qpa.xcb: could not connect to display 
 qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
 This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
@@ -124,7 +122,7 @@ GKS: can't connect to GKS socket application
 
 GKS: Open failed in routine OPEN_WS
 GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
-Maximum error of 6000, chain_1, CubatureJLp:2.9937814722569396
+Maximum error of 6000, chain_1, CubatureJLp:2.9936326634347554
 qt.qpa.xcb: could not connect to display 
 qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
 This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.

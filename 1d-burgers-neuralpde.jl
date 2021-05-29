@@ -38,8 +38,8 @@ function solve_1d_burgers_equation(maxiters, chain, strategy)
     Dx = Differential(x)
     Dxx = Differential(x)^2
 
-    eq = Dt(u(x, t)) + Dx(u(x, t))  ~ nu * Dxx(u(x, t)) 
-W
+    eq = Dt(u(x, t)) + u(x, t) * Dx(u(x, t))  ~ nu * Dxx(u(x, t)) 
+
     bcs = [u(x,0.0) ~ analytic_sol_func(x, 0.0),
            u(0.0,t) ~ u(x_max,t)]
 
