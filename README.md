@@ -1,4 +1,4 @@
-# Solving Burgers' equation using NeuralPDE
+# [WIP] Solving Burgers' equation using NeuralPDE
 
 This case study analyzes Burgers' equation, a simplified version of the Navier-Stokes equations. It is written as follows:
 
