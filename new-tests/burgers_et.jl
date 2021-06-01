@@ -44,6 +44,10 @@ function burgers(strategy, minimizer, maxIters)
     bcs = [u(x,0.0) ~ analytic_sol_func(x, 0.0),
            u(0.0,t) ~ u(x_max,t)]
 
+#    bcs = [u(x,0.0) ~ analytic_sol_func(x, 0.0),
+#           u(0.0,t) ~ analytic_sol_func(0.0, t),
+#           u(x_max,t) ~ analytic_sol_func(x_max, t)]
+
     domains = [x ∈ IntervalDomain(0.0, x_max),
                t ∈ IntervalDomain(0.0, t_max)]
     
@@ -74,10 +78,11 @@ function burgers(strategy, minimizer, maxIters)
                                               phi,derivative,chain,initθ,error_strategy,
                                               bc_indvars = bc_indvar) for (bc,bc_indvar) in zip(bcs,bc_indvars)]
 
-    train_sets = NeuralPDE.generate_training_sets(domains,dx_err,[eq],bcs,indvars,depvars)
+    #train_sets = NeuralPDE.generate_training_sets(domains,dx_err,[eq],bcs,indvars,depvars)
+    train_sets = NeuralPDE.generate_training_sets(domains,[x_max/10,t_max/10],[eq],bcs,indvars,depvars)
+    
     train_domain_set, train_bound_set = train_sets
-
-
+    
     pde_loss_function = NeuralPDE.get_loss_function([_pde_loss_function],
                                           train_domain_set,
                                           error_strategy)
