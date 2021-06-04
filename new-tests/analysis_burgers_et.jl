@@ -33,11 +33,11 @@ maxIters = [(10000,10000,10000,10000,10000,10000),
             (10000,10000,10000,10000,10000,10000)] #iters for ADAM/LBFGS
 
 minimizers = [GalacticOptim.ADAM(0.001),
-              #GalacticOptim.BFGS()]
               GalacticOptim.LBFGS()]
+              #GalacticOptim.BFGS()]
 
-minimizers_short_name = ["ADAM"]
-                        # "LBFGS"]
+minimizers_short_name = ["ADAM",
+                         "LBFGS"]
                         # "BFGS"]
 
 experiment_ids = [[string(strat,min) for strat=1:length(strategies)]
@@ -58,12 +58,12 @@ function run_experiments(experiment_ids, strategies, strategies_short_name,
           for strat=1:length(strategies) # strategy
                 println(string(strategies_short_name[strat], "  ", minimizers_short_name[min]))
                 res = burgers(strategies[strat], minimizers[min], maxIters[min][strat])
-                push!(error_res, experiment_ids[strat][min]  => res[1])
-                push!(params_res, experiment_ids[strat][min] => res[2])
-                push!(domains, experiment_ids[strat][min]    => res[3])
-                push!(times, experiment_ids[strat][min]      => res[4])
-                push!(prediction, experiment_ids[strat][min] => res[5])
-                push!(losses_res, experiment_ids[strat][min] => res[6])
+                error_res[experiment_ids[min][strat]] = res[1]
+                params_res[experiment_ids[min][strat]] = res[2]
+                domains[experiment_ids[min][strat]] = res[3]
+                times[experiment_ids[min][strat]] = res[4]
+                prediction[experiment_ids[min][strat]] = res[5]
+                losses_res[experiment_ids[min][strat]] = res[6]
           end
     end
     return error_res, domains, params_res, times, prediction, losses_res
@@ -135,7 +135,7 @@ save_experiments(eq_name, error_res, domains, params_res, times, prediction, los
 
 #error_res, domains, params_res, times, prediction, losses_res = load_experiments(eq_name)
 
-plot_predictions(experiment_ids, strategies_short_name, u_real, prediction, ts, xs)
+#plot_predictions(experiment_ids, strategies_short_name, u_real, prediction, ts, xs)
 
 
 

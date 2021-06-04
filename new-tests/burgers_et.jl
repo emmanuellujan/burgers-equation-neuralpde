@@ -58,7 +58,7 @@ function burgers(strategy, minimizer, maxIters)
     
     xs, ts = [domain.domain.lower:dx:domain.domain.upper for (dx, domain) in zip([dx, dt], domains)]
     
-    indvars = [x,t]
+    indvars = [x, t]
     depvars = [u]
 
     chain = FastChain(FastDense(2,18,Flux.σ),FastDense(18,18,Flux.σ),FastDense(18,1))
@@ -118,7 +118,6 @@ function burgers(strategy, minimizer, maxIters)
     pde_system = PDESystem(eq,bcs,domains,indvars,depvars)
     prob = discretize(pde_system,discretization)
 
-
     timeCounter = 0.0
     startTime = time_ns() #Fix initial time (t=0) before starting the training
 
@@ -138,7 +137,7 @@ function burgers(strategy, minimizer, maxIters)
     # Model prediction
     domain = [x,t]
 
-    u_predict = reshape([first(phi([x,t],res.minimizer)) for x in xs for t in ts],(length(xs),length(ts)))
+    u_predict = reshape([first(phi([x,t],res.minimizer)) for t in ts for x in xs],(length(xs),length(ts)))
 
     return [error, params, domain, times, u_predict, losses]
 end
