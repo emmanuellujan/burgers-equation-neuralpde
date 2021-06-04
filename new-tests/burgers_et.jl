@@ -83,7 +83,6 @@ function burgers(strategy, minimizer, maxIters)
                                               phi,derivative,chain,initθ,error_strategy,
                                               bc_indvars = bc_indvar) for (bc,bc_indvar) in zip(bcs,bc_indvars)]
 
-    #train_sets = NeuralPDE.generate_training_sets(domains,dx_err,[eq],bcs,indvars,depvars)
     train_sets = NeuralPDE.generate_training_sets(domains,[x_max/10,t_max/10],[eq],bcs,indvars,depvars)
     
     train_domain_set, train_bound_set = train_sets
@@ -123,7 +122,7 @@ function burgers(strategy, minimizer, maxIters)
     timeCounter = 0.0
     startTime = time_ns() #Fix initial time (t=0) before starting the training
 
-#    res = GalacticOptim.solve(prob, minimizer; cb = cb_, maxiters = maxIters)
+    res = GalacticOptim.solve(prob, minimizer; cb = cb_, maxiters = maxIters)
 
 #    t_0 = time_ns()
 #    m = floor(Int, maxiters/4)
