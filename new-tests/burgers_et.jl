@@ -27,6 +27,11 @@ analytic_sol_func(x, t) = -2*nu*(-(-8*t + 2*x)*exp(-(-4*t + x)^2/(4*nu*(t + 1)))
                           exp(-(-4*t + x - 6.28318530717959)^2/(4*nu*(t + 1)))/
                           (4*nu*(t + 1)))/(exp(-(-4*t + x - 6.28318530717959)^2/
                           (4*nu*(t + 1))) + exp(-(-4*t + x)^2/(4*nu*(t + 1)))) + 4
+domains = [x ∈ IntervalDomain(0.0, x_max),
+           t ∈ IntervalDomain(0.0, t_max)]
+xs, ts = [domain.domain.lower:dx:domain.domain.upper for (dx, domain) in zip([dx, dt], domains)]
+u_real = reshape([analytic_sol_func(x, t) for t in ts for x in xs], (length(xs), length(ts)))
+
 
 # NeuralPDE solution 
 
@@ -118,7 +123,7 @@ function burgers(strategy, minimizer, maxIters)
     timeCounter = 0.0
     startTime = time_ns() #Fix initial time (t=0) before starting the training
 
-    res = GalacticOptim.solve(prob, minimizer; cb = cb_, maxiters = maxIters)
+#    res = GalacticOptim.solve(prob, minimizer; cb = cb_, maxiters = maxIters)
 
 #    t_0 = time_ns()
 #    m = floor(Int, maxiters/4)
