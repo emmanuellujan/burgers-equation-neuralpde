@@ -36,8 +36,8 @@ minimizers = [GalacticOptim.ADAM(0.001),
               #GalacticOptim.BFGS()]
               GalacticOptim.LBFGS()]
 
-minimizers_short_name = ["ADAM",
-                         "LBFGS"]
+minimizers_short_name = ["ADAM"]
+                        # "LBFGS"]
                         # "BFGS"]
 
 experiment_ids = [[string(strat,min) for strat=1:length(strategies)]
@@ -128,14 +128,14 @@ end
 # Run, save and plot
 
 error_res, domains, params_res, times, prediction, losses_res =
-                             run_experiments(strategies, strategies_short_name,
-                                             minimizers, minimizers_short_name)
+            run_experiments(experiment_ids, strategies, strategies_short_name,
+                            minimizers, minimizers_short_name)
 
 save_experiments(eq_name, error_res, domains, params_res, times, prediction, losses_res)
 
 #error_res, domains, params_res, times, prediction, losses_res = load_experiments(eq_name)
 
-#plot_predictions(experiment_ids, strategies_short_name, u_real, prediction, ts, xs)
+plot_predictions(experiment_ids, strategies_short_name, u_real, prediction, ts, xs)
 
 
 

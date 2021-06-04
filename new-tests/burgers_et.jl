@@ -124,14 +124,12 @@ function burgers(strategy, minimizer, maxIters)
 
     res = GalacticOptim.solve(prob, minimizer; cb = cb_, maxiters = maxIters)
 
-#    t_0 = time_ns()
-#    m = floor(Int, maxiters/4)
-#    res = GalacticOptim.solve(prob, ADAM(0.1); cb = cb, maxiters=m)
+#    m = floor(Int, maxIters/4)
+#    res = GalacticOptim.solve(prob, ADAM(0.1); cb = cb_, maxiters=m)
 #    prob = remake(prob,u0=res.minimizer)
-#    res = GalacticOptim.solve(prob, Optim.BFGS(); cb = cb, maxiters=m)
+#    res = GalacticOptim.solve(prob, Optim.BFGS(); cb = cb_, maxiters=m)
 #    prob = remake(prob,u0=res.minimizer)
-#    res = GalacticOptim.solve(prob, ADAM(0.01); cb = cb, maxiters=2*m)
-#    t_f = time_ns()
+#    res = GalacticOptim.solve(prob, ADAM(0.01); cb = cb_, maxiters=2*m)
 
     phi = discretization.phi
 
